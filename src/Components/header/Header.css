@@ -1,0 +1,9 @@
+header {
+    width: 100%;
+    min-width: 320px;
+    border-bottom: solid #E7E7E7;
+}
+
+header:img{
+    margin: auto, 100;
+}

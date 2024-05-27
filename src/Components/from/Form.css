@@ -1,0 +1,15 @@
+.main_form{
+    margin: auto;
+    color: #E7E7E7;
+}
+.submitButton{
+    font-size: 1.4rem;
+    font-weight: 650;
+    color: #B6883E;
+}
+h2 {
+    font-size: 1.5rem;
+    font-weight: 650;
+    color: #B6883E;
+    margin-top: 50px;
+}
