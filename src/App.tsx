@@ -6,11 +6,11 @@ import { Footer } from './Components/footer/Footer'
 function App() {
 
   return (
-    <>
+    <div className="Wrapper">
       <Header />
       <Form />
       <Footer />
-    </>
+    </div>
   )
 }
 

@@ -1,4 +1,9 @@
+*{
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -21,8 +26,8 @@ input, select, label, option {
   margin: 8px 0;
   display: block;
   max-width: 600px;
-  border: 0.5px solid #E7E7E7;
-  border-radius: 4px;
+  /* border: 0.5px solid #E7E7E7;
+  border-radius: 4px; */
   box-sizing: border-box;
 }
 

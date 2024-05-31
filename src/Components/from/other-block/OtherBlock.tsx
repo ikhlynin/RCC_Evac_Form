@@ -1,40 +1,42 @@
 import './OtherBlock.css'
+import { useFormContext } from 'react-hook-form'
 
 export function OtherBlock() {
-    
+
+    const {register, watch, formState: { errors }} = useFormContext()
+
     return (
-        <>
+        <div className="otherBlock">
             <label htmlFor="" className="quantity">
                 Кількість людей
-                <input type="text" className="quantity" placeholder='Вкажіть кількість людей' />
+                <input type="text" className="quantity" placeholder='Вкажіть кількість людей' {...register('quantity')} />
             </label>
             <label htmlFor="" className="physical">
                 <span>Фізичний стан людини</span><br />
-                <div>
-                    <input type="checkbox" id="syd" value={'sydachi'} />
-                    <label htmlFor="syd" className='lableCheck'>Сидячі</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="lezh" value={'lezhachi'} />
-                    <label htmlFor="lezh" className='lableCheck'>Лежачі</label>
-                </div>
+                    <input type="checkbox" id="lezh" {...register('physic')}/>
+                    <label htmlFor="lezh" className='lableCheck' >Є лежачі</label>
+            </label>
+            <label htmlFor="" className="physical">
+                <span>Хто робив заявку</span><br />
+                    <input type="checkbox" id="lezh" {...register('whoami')} />
+                    <label htmlFor="lezh" className='lableCheck' >Заявка за іншу людину</label>
             </label>
             <label htmlFor="" className="quantity">
                 Тварини
-                <input type="text" className="quantity" placeholder='Вкажіть є тварини' />
+                <input type="text" className="quantity" placeholder='Вкажіть є тварини' {...register('pets')} />
             </label>
-            <label htmlFor="" className="quantity">
+            <label htmlFor="">
                 Місце евакуації
-                <input type="text" className="quantity" placeholder='Вкажіть до якого НП планується проводитись евакуація' />
+                <input type="text" placeholder='Вкажіть до якого НП планується проводитись евакуація' {...register('destination')}/>
             </label>
-            <label htmlFor="" className="quantity">
-                Коментар
-                <input type="text" className="quantity" placeholder='Якщо є інформація не передбачена формою' />
+            <label htmlFor="">
+                Коментар <br />
+                <textarea placeholder='Якщо є інформація не передбачена формою' {...register('otherInfo')}/>
             </label>
             <label htmlFor="" className="quantity">
                 Дата евакуації
-                <input type="date" className="quantity" />
+                <input type="date" className="quantity" {...register('evacDate')} />
             </label>
-        </>
+        </div>
     )
 }
