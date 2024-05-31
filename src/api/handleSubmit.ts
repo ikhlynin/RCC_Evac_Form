@@ -1,9 +1,15 @@
-const WRITE_URL = "https://script.google.com/macros/s/AKfycbxKR2G3Wd-mIYFfpRZ160bbZD84wK3Z8rzR3dPZNRFu84jSNyxZ3w0V_5kERbBNqWY8/exec"
+import { GoogleSpreadsheet } from "google-spreadsheet"
+
+const APP_URL = 'https://script.google.com/macros/s/AKfycbyIxelXGJAYfdQdYBGZMOZtpBISJw8WK0PtMJyPrLXnnvGsbD5hB4-gtyzlP1YlRmWy/exec'
+//const doc = new GoogleSpreadsheet(SHEET_ID)
+
 
 export async function handleSubmitEvac(data){
-    await fetch('WRITE_URL', {
-        method: 'POST',
-        body: data,
-        muteHttpExceptions: true,
+    console.log("handle data >>> ", data)
+
+    console.log('data >> ', data)
+    await fetch(APP_URL, {
+        method: "POST",
+        body: JSON.stringify(data),
     })
 }

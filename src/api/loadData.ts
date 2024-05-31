@@ -6,7 +6,7 @@ console.log(
 )
 
 export async function initCsvData(){ 
-    const content = await fetch('DB_ZAPPO.csv')
+    const content = await fetch('DB.csv')
     const textContent = await content.text()
     const fullContent = parser.parse(textContent).data
 

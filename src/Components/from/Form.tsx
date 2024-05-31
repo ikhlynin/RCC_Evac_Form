@@ -44,7 +44,7 @@ const evacDefaultValues: EvacForm = {
 
 export type EvacForm = {
    name: string
-   phone: number
+   phone: string
    area: string
    district: string
    community: string
