@@ -1,22 +1,9 @@
-import { EvacForm } from "../Components/from/Form"
+const WRITE_URL = "https://script.google.com/macros/s/AKfycbxKR2G3Wd-mIYFfpRZ160bbZD84wK3Z8rzR3dPZNRFu84jSNyxZ3w0V_5kERbBNqWY8/exec"
 
-const sheetID = '   '
-
-export function handleSubmitEvac(data:EvacForm){
-    alert(
-        "Name: " + data.name +
-        "\nPhone: " + data.phone + 
-        "\nArea: " + data.area +
-        "\nDistrict: " + data.district +
-        "\nCommunity: " + data.community +
-        "\nSettlment" + data.settlement +
-        "\nQuantity of ppl: " + data.quantity +
-        "\nPhysical: " + data.physic +
-        "\nwhoami: " + data.whoami +
-        "\nPets: " + data.pets +
-        "\nDestination: " + data.destination +
-        "\nOhet info: " + data.otherInfo +
-        "\nDate of evacuation: " + data.evacDate
-
-    )
+export async function handleSubmitEvac(data){
+    await fetch('WRITE_URL', {
+        method: 'POST',
+        body: data,
+        muteHttpExceptions: true,
+    })
 }
