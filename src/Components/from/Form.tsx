@@ -38,6 +38,7 @@ export function Form() {
     )
 }
 
+// @ts-ignore
 const evacDefaultValues: EvacForm = {
    area: "",
 }

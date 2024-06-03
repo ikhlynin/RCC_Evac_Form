@@ -10,6 +10,7 @@ export async function initCsvData(){
     const textContent = await content.text()
     const fullContent = parser.parse(textContent).data
 
+    // @ts-ignore
     fullData.push(...fullContent.slice(1))
 
     console.log(
