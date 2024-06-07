@@ -1,5 +1,4 @@
 import { useFormContext } from 'react-hook-form'
-import './InfoBlock.css'
 
 
 export function InfoBlock() {
@@ -9,13 +8,13 @@ export function InfoBlock() {
     const name = watch('name')
     
     return (
-        <div className='info_block'>
+        <div className='Container'>
             <label className='fName'>
-                Введіть ПІБ
+                <h3>Введіть ПІБ</h3>
                 <input type="text" className='Name' placeholder='Вкажіть ПІБ контактної людини' {...register('name')} />
             </label>
             <label className="phone1">
-                Введіть номер телефону
+                <h3>Введіть номер телефону</h3>
                 <input type="tel" className="phone1" placeholder='Вкажіть телефон людини що буде евакуйовуватись' {...register('phone')} />
             </label>
         </div>

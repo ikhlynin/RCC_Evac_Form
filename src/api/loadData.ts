@@ -1,9 +1,7 @@
 import parser from 'papaparse'
 
 const fullData: Array<Array<string>> = []
-console.log(
-    'fullData >> ', fullData
-)
+
 
 export async function initCsvData(){ 
     const content = await fetch('DB.csv')
@@ -12,10 +10,6 @@ export async function initCsvData(){
 
     // @ts-ignore
     fullData.push(...fullContent.slice(1))
-
-    console.log(
-        'fullData 2 >> ', fullData
-    )
 }
 
 export function getArea() {

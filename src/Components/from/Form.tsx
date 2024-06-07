@@ -1,10 +1,9 @@
 import './Form.css'
 import { SubmitHandler, useForm, FormProvider, SubmitErrorHandler } from 'react-hook-form'
-import { InfoBlock } from './info-block/InfoBlock'
-import { LocationBlock } from './location-block/LocationBlock'
-import { OtherBlock } from './other-block/OtherBlock'
+import { InfoBlock } from './InfoBlock'
+import { LocationBlock } from './LocationBlock'
+import { OtherBlock } from './OtherBlock'
 import { handleSubmitEvac } from '../../api/handleSubmit'
-//import { submit } from '../../api/handleSubmit'
 
 
 
@@ -40,7 +39,19 @@ export function Form() {
 
 // @ts-ignore
 const evacDefaultValues: EvacForm = {
-   area: "",
+    name:"",
+    phone: "",
+    area: "",
+    district: "",
+    community: "",
+    settlement: "",
+    address: "",
+    quantity: 0,
+    physic: false,
+    whoami: false,
+    pets: "",
+    destination: "",
+    otherInfo: ""
 }
 
 export type EvacForm = {
@@ -50,6 +61,7 @@ export type EvacForm = {
    district: string
    community: string
    settlement: string
+   address: string
    quantity: number
    physic: boolean
    whoami: boolean

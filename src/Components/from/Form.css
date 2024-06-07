@@ -5,17 +5,61 @@
 .submitButton{
     font-size: 1.4rem;
     font-weight: 650;
+    background-color: #E7E7E7;
     color: #B6883E;
 }
-h2 {
-    font-size: 1.5rem;
-    font-weight: 650;
-    color: #B6883E;
-    margin-top: 50px;
-}
-
 .contentWrapper {
   border: 0.5px solid #E7E7E7;
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+  input[type=date]{
+    border-radius: 5px;
+    border: solid 1px #B3B3B3;
+    color: #757575;
+  }
+  
+  textarea{
+    border-radius: 5px;
+    border: solid 1px #B3B3B3;
+    color: #757575;
+  }
+  input[type=text]{
+    border-radius: 5px;
+    border: solid 1px #B3B3B3;
+    color: #757575;
+  }
+  input[type=tel]{
+    border-radius: 5px;
+    border: solid 1px #B3B3B3;
+    color: #757575;
+  }
+  
+  .Container{
+    padding-bottom: 30px;
+    width: 100%;
+    min-width: 320px;
+    border: 0.5px solid #E7E7E7;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .location_select{
+    color: #757575;
+  }
+
+  input, select, label, option, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    max-width: 600px;
+    /* border: 0.5px solid #E7E7E7;
+    border-radius: 4px; */
+    box-sizing: border-box;
+  }
+  
+  label {
+    font-size: 1.3rem;
+  }

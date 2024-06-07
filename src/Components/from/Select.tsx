@@ -1,6 +1,5 @@
 import { useFormContext, Controller } from 'react-hook-form'
 import ReactSelect from "react-select"
-import './Select.css'
 
 
 type SelectProps = {

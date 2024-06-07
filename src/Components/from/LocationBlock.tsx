@@ -1,13 +1,11 @@
 import { useFormContext, Controller } from 'react-hook-form'
-import './LocationBlock.css'
 import { useEffect, useState } from 'react'
 import { Select } from './Select'
-import { getCommunity, getDistrict, getSettlement, getArea, initCsvData } from '../../../api/loadData'
+import { getCommunity, getDistrict, getSettlement, getArea, initCsvData } from '../../api/loadData'
 
 export function LocationBlock() {
 
     const { register, resetField, watch, getValues, formState: { errors } } = useFormContext()
-    console.log('getValues >> ', getValues( ))
     const [area, district, community] = watch(['area', 'district', 'community'])
     const [areaOptions, setAreaOptions] = useState([])
     const [districtOptions, setDistrictOptions] = useState([])
@@ -17,15 +15,12 @@ export function LocationBlock() {
     const loadArea = async () => {
         await initCsvData()
         const options = await getArea()
-        console.log('options >>> ', options)
         setAreaOptions(options)
     }
 
 
     const loadDistricts = async () => {
-        console.log("area condition", area)
         const options = await getDistrict(area)
-        console.log("options for district >>> ", options)
         setDistrictOptions(options)
     }
     
@@ -65,26 +60,30 @@ export function LocationBlock() {
         }
     }, [community])
 
-    console.log('Area options >>> ' + areaOptions)
 
     return (
-        <div className='location_block'>
+        <div className='Container'>
             <label htmlFor="" className="area">
-                Виберіть область
+                <h3>Виберіть область</h3>
             <Select name="area" options={areaOptions} />
             </label>
             <label htmlFor="" className="district">
-                Виберіть район
+                <h3>Виберіть район</h3>
                 <Select name="district" options={districtOptions} />
             </label>
             <label htmlFor="" className="community">
-                Виберіть громаду
+                <h3>Виберіть громаду</h3>
                 <Select name="community" options={communityOptions} />
             </label>
             <label htmlFor="" className="settlement">
-                Виберіть населенний пункт
+                <h3>Виберіть населенний пункт</h3>
                 <Select name="settlement" options={settlementOptions} />
             </label>
+            <label htmlFor="">
+                <h3>Введіть адресу</h3>
+                <input name="address" type="text" placeholder='Введіть адресу'/>
+            </label>
+            
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import './App.css'
 import { Header } from './Components/header/Header'
 import { Form } from './Components/from/Form'
-import { Footer } from './Components/footer/Footer'
+// import { Footer } from './Components/footer/Footer'
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
     <div className="Wrapper">
       <Header />
       <Form />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
