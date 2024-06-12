@@ -4,6 +4,7 @@ import { InfoBlock } from './InfoBlock'
 import { LocationBlock } from './LocationBlock'
 import { OtherBlock } from './OtherBlock'
 import { handleSubmitEvac } from '../../api/handleSubmit'
+//import Popup from 'reactjs-popup'
 
 
 
@@ -15,9 +16,13 @@ export function Form() {
     const {
         register, 
         handleSubmit,
+        reset
     } = context
 
-    const submit: SubmitHandler<EvacForm> = data => handleSubmitEvac(data)
+    const submit: SubmitHandler<EvacForm> =async( data) => {
+       await handleSubmitEvac(data)
+        reset()
+    }
 
     const error: SubmitErrorHandler<EvacForm> = data => alert(JSON.stringify(data))
 
@@ -31,6 +36,9 @@ export function Form() {
                 <LocationBlock />
                 <h2>Інша інформація</h2>
                 <OtherBlock />
+                {/* <Popup trigger={}>
+                    <div>Popup content</div>
+                </Popup> */}
                 <button className="submitButton" >Відправити заявку</button>
             </FormProvider> 
         </form>
@@ -39,6 +47,7 @@ export function Form() {
 
 // @ts-ignore
 const evacDefaultValues: EvacForm = {
+    timeStamp: null,
     name:"",
     phone: "",
     area: "",
@@ -46,15 +55,16 @@ const evacDefaultValues: EvacForm = {
     community: "",
     settlement: "",
     address: "",
-    quantity: 0,
-    physic: false,
-    whoami: false,
+    quantity: null,
+    physic: "Сидячий",
+    whoami: "Сам",
     pets: "",
     destination: "",
     otherInfo: ""
 }
 
 export type EvacForm = {
+    timeStamp:Date
    name: string
    phone: string
    area: string
@@ -63,8 +73,8 @@ export type EvacForm = {
    settlement: string
    address: string
    quantity: number
-   physic: boolean
-   whoami: boolean
+   physic: string
+   whoami: string
    pets: string
    destination: string
    otherInfo: string
