@@ -62,26 +62,27 @@ export function LocationBlock() {
 
 
     return (
-        <div className='Container'>
-            <label htmlFor="" className="area">
-                <h3>Виберіть область</h3>
+        <div className='p-5 dark:border rounded-xl flex flex-wrap flex-row justify-between dark:bg-darkBg2  my-10'>
+            <h2 className='text-3xl mb-10 text-navy flex w-full font-bold dark:text-darkText'>Геоданні</h2>
+            <label htmlFor="" className="h-20 my-2 w-full md:w-[46%]">
+                <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Виберіть область</h3>
             <Select name="area" options={areaOptions} />
             </label>
-            <label htmlFor="" className="district">
-                <h3>Виберіть район</h3>
+            <label htmlFor="" className="h-20 my-2 w-full md:w-[46%] ">
+                <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Виберіть район</h3>
                 <Select name="district" options={districtOptions} />
             </label>
-            <label htmlFor="" className="community">
-                <h3>Виберіть громаду</h3>
+            <label htmlFor="" className="h-20 my-2 w-full md:w-[46%]">
+                <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Виберіть громаду</h3>
                 <Select name="community" options={communityOptions} />
             </label>
-            <label htmlFor="" className="settlement">
-                <h3>Виберіть населенний пункт</h3>
-                <Select name="settlement" options={settlementOptions} />
+            <label htmlFor="" className="h-20 my-2 w-full md:w-[46%]">
+                <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Виберіть населенний пункт</h3>
+                <Select name="settlement" options={settlementOptions}/>
             </label>
-            <label htmlFor="">
-                <h3>Введіть адресу</h3>
-                <input name="address" type="text" placeholder='Введіть адресу'/>
+            <label htmlFor="" className='h-20 my-2 basis-full'>
+                <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Введіть адресу</h3>
+                <input name="address" type="text" placeholder='Введіть адресу' className='rounded-full px-6 h-12 w-full shadow-lg'/>
             </label>
             
         </div>

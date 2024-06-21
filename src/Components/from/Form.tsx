@@ -1,10 +1,10 @@
-import './Form.css'
 import { SubmitHandler, useForm, FormProvider, SubmitErrorHandler } from 'react-hook-form'
 import { InfoBlock } from './InfoBlock'
 import { LocationBlock } from './LocationBlock'
 import { OtherBlock } from './OtherBlock'
 import { handleSubmitEvac } from '../../api/handleSubmit'
-//import Popup from 'reactjs-popup'
+import Popup from 'reactjs-popup'
+import { Modal, Box, Typography } from 'react-modal'
 
 
 
@@ -28,18 +28,18 @@ export function Form() {
 
     return (
 
-        <form className='main_form' onSubmit={handleSubmit(submit)}>
+        <form className='w-[65%] mx-auto font-inter' onSubmit={handleSubmit(submit)}>
             <FormProvider {...context}>
-                <h2>Персональні данні</h2>
+                <h1 className='text-6xl text-navy mt-20 mb-10 font-bold dark:text-darkText'>Форма евакуації</h1>
+                
                 <InfoBlock />
-                <h2>Геоданні</h2>
+                
                 <LocationBlock />
-                <h2>Інша інформація</h2>
+                
                 <OtherBlock />
-                {/* <Popup trigger={}>
-                    <div>Popup content</div>
-                </Popup> */}
-                <button className="submitButton" >Відправити заявку</button>
+                <button type='submit' className="submitButton text-3xl mt-10 p-4 w-full text-navy border-4 border-navy rounded-full shadow-lg active:tracking-wide hover:bg-navy hover:text-white transition duration-500 dark:bg-darkBg2 dark:border-2 dark:border-darkBorder dark:hover:bg-darkBorder dark:hover:text-white">
+                    <div className="before:content-['Відправити заявку'] dark:text-darkText">Відправити заявку</div>
+                </button>
             </FormProvider> 
         </form>
     )
@@ -48,7 +48,9 @@ export function Form() {
 // @ts-ignore
 const evacDefaultValues: EvacForm = {
     timeStamp: null,
-    name:"",
+    firstName: "",
+    lastName: "",
+    surname: "",
     phone: "",
     area: "",
     district: "",
@@ -56,16 +58,19 @@ const evacDefaultValues: EvacForm = {
     settlement: "",
     address: "",
     quantity: null,
-    physic: "Сидячий",
-    whoami: "Сам",
+    physic: "",
+    whoami: "",
     pets: "",
+    accommodation: "",
     destination: "",
     otherInfo: ""
 }
 
 export type EvacForm = {
     timeStamp:Date
-   name: string
+   firstName: string
+   lastName: string
+   surname: string
    phone: string
    area: string
    district: string
@@ -76,6 +81,7 @@ export type EvacForm = {
    physic: string
    whoami: string
    pets: string
+   accommodation: string
    destination: string
    otherInfo: string
    evacDate: Date
