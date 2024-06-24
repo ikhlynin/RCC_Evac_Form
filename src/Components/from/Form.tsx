@@ -61,8 +61,8 @@ const evacDefaultValues: EvacForm = {
     physic: "",
     whoami: "",
     pets: "",
-    accommodation: "",
     destination: "",
+    accommodation: "",
     otherInfo: ""
 }
 
@@ -81,8 +81,8 @@ export type EvacForm = {
    physic: string
    whoami: string
    pets: string
-   accommodation: string
    destination: string
+   accommodation: string
    otherInfo: string
    evacDate: Date
 }

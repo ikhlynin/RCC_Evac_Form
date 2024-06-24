@@ -15,28 +15,19 @@ export function Select({ name, options }: SelectProps){
             name={name}
             control={control}
             render={({field: { value, onChange}}) => (
-                // styles={{clearIndicator: () => ({}), container: () => ({}), control: () => ({}), ...}}
                 <ReactSelect
-                // classNames={{
-                //     control: () => "h-[48px] border-0 rounded-[9999px] "
-                // }}
+                unstyled
+                classNames={{
+                    control: () => "rounded-full bg-white px-6 h-12 w-full shadow-lg dark:border-2 dark:bg-darkBg2 dark:border-darkBorder dark:text-darkText dark:focus:border-darkActive",
+                    option: () => "px-6 h-12 w-full  dark:bg-darkBg2 my-2 dark:text-darkText",
+                    menuList:() => "block rounded-3xl bg-white mt-2 pt-2  shadow-lg dark:bg-darkBg2 dark:border-2 dark:border-darkBorder dark:text-darkText",
+                }}
                 placeholder={'Виберіть опцію'} 
                 options={options} 
                 onChange={({ value }) => 
                     onChange(value)} value={{value, label: value}
-                }
-                styles={{
-                    control: (baseStyles, state) => ({
-                      ...baseStyles,
-                      height: '48px',
-                      border: 0,
-                      borderRadius: '9999px',
-                      padding: '0px 1.25rem',
-                      boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)'
-                      
-                    }),
-                  }}  
-                  />
+                } 
+                />
             )}
         />
        

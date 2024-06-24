@@ -82,7 +82,7 @@ export function LocationBlock() {
             </label>
             <label htmlFor="" className='h-20 my-2 basis-full'>
                 <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Введіть адресу</h3>
-                <input name="address" type="text" placeholder='Введіть адресу' className='rounded-full px-6 h-12 w-full shadow-lg'/>
+                <input name="address" type="text" placeholder='Введіть адресу' className='rounded-full px-6 h-12 w-full shadow-lg dark:border-2 dark:bg-darkBg2 dark:border-darkBorder dark:text-darkText dark:focus:border-darkActive  '/>
             </label>
             
         </div>
