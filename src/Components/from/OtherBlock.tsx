@@ -69,11 +69,11 @@ export function OtherBlock() {
             
             <label htmlFor="" className="h-20 my-2 w-full md:w-[46%]">
                 <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Коментар</h3>
-                <textarea className="rounded-full px-6 py-2 h-12 w-full shadow-lg dark:border-2 dark:bg-darkBg2 dark:border-darkBorder dark:text-darkText dark:focus:border-darkActive" placeholder='Якщо є інформація не передбачена формою' {...register('otherInfo')}/>
+                <input className="resize-none rounded-full px-6 py-2 h-12 w-full shadow-lg dark:border-2 dark:bg-darkBg2 dark:border-darkBorder dark:text-darkText dark:focus:border-darkActive" placeholder='Якщо є інформація не передбачена формою' {...register('otherInfo')}/>
             </label>
             <label htmlFor="" className="h-20 my-2 w-full md:w-[46%]">
                 <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Дата евакуації</h3>
-                <input type="date" className="rounded-full px-6 h-12 w-full shadow-lg dark:border-2 dark:bg-darkBg2 dark:border-darkBorder dark:text-darkText dark:focus:border-darkActive" {...register('evacDate')} />
+                <input type="date" className=" rounded-full px-6 h-12 w-full shadow-lg dark:border-2 dark:bg-darkBg2 dark:border-darkBorder dark:text-darkText dark:focus:border-darkActive" {...register('evacDate')} />
             </label>
         </div>
     )
