@@ -17,12 +17,12 @@ export function Select({ name, options }: SelectProps){
             render={({field: { value, onChange}}) => (
                 <ReactSelect
                 unstyled
+                placeholder={'Виберіть опцію'}
                 classNames={{
                     control: () => "rounded-full bg-white px-6 h-12 w-full shadow-lg dark:border-2 dark:bg-darkBg2 dark:border-darkBorder dark:text-darkText dark:focus:border-darkActive",
                     option: () => "px-6 h-12 w-full  dark:bg-darkBg2 my-2 dark:text-darkText",
                     menuList:() => "block rounded-3xl bg-white mt-2 pt-2  shadow-lg dark:bg-darkBg2 dark:border-2 dark:border-darkBorder dark:text-darkText",
-                }}
-                placeholder={'Виберіть опцію'} 
+                }} 
                 options={options} 
                 onChange={({ value }) => 
                     onChange(value)} value={{value, label: value}
