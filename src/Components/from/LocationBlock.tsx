@@ -66,19 +66,19 @@ export function LocationBlock() {
             <h2 className='text-3xl mb-10 text-navy flex w-full font-bold dark:text-darkText'>Геоданні</h2>
             <label htmlFor="" className="h-20 my-2 w-full md:w-[46%]">
                 <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Виберіть область</h3>
-            <Select name="area" options={areaOptions} />
+            <Select name="area" {...register('area')} options={areaOptions} />
             </label>
             <label htmlFor="" className="h-20 my-2 w-full md:w-[46%] ">
                 <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Виберіть район</h3>
-                <Select name="district" options={districtOptions} />
+                <Select name="district" {...register('district')} options={districtOptions} />
             </label>
             <label htmlFor="" className="h-20 my-2 w-full md:w-[46%]">
                 <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Виберіть громаду</h3>
-                <Select name="community" options={communityOptions} />
+                <Select name="community" {...register('community')} options={communityOptions} />
             </label>
             <label htmlFor="" className="h-20 my-2 w-full md:w-[46%]">
                 <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Виберіть населенний пункт</h3>
-                <Select name="settlement" options={settlementOptions}/>
+                <Select name="settlement" {...register('settlement')} options={settlementOptions}/>
             </label>
             <label htmlFor="" className='h-20 my-2 basis-full'>
                 <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Введіть адресу</h3>

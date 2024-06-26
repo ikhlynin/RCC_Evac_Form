@@ -5,6 +5,8 @@ import { OtherBlock } from './OtherBlock'
 import { handleSubmitEvac } from '../../api/handleSubmit'
 import Popup from 'reactjs-popup'
 import { Modal, Box, Typography } from 'react-modal'
+import { useState } from 'react'
+import { ConsultationBlock } from './Consultation'
 
 
 
@@ -14,6 +16,7 @@ export function Form() {
     })
 
     const {
+        watch,
         register, 
         handleSubmit,
         reset
@@ -24,10 +27,10 @@ export function Form() {
         reset()
     }
 
+    const callType = watch("callType")
     const error: SubmitErrorHandler<EvacForm> = data => alert(JSON.stringify(data))
 
     return (
-
         <form className='w-[65%] mx-auto font-inter' onSubmit={handleSubmit(submit)}>
             <FormProvider {...context}>
                 <h1 className='text-6xl text-navy mt-20 mb-10 font-bold dark:text-darkText'>Форма евакуації</h1>
@@ -36,7 +39,8 @@ export function Form() {
                 
                 <LocationBlock />
                 
-                <OtherBlock />
+                {callType == "Евакуація"? <OtherBlock /> : <ConsultationBlock />}
+                
                 <button type='submit' className="submitButton text-3xl mt-10 p-4 w-full text-navy border-4 border-navy rounded-full shadow-lg active:tracking-wide hover:bg-navy hover:text-white transition duration-500 dark:bg-darkBg2 dark:border-2 dark:border-darkBorder dark:hover:bg-darkBorder dark:hover:text-white">
                     <div className="before:content-['Відправити заявку'] dark:text-darkText">Відправити заявку</div>
                 </button>
@@ -48,9 +52,7 @@ export function Form() {
 // @ts-ignore
 const evacDefaultValues: EvacForm = {
     timeStamp: null,
-    firstName: "",
-    lastName: "",
-    surname: "",
+    name: "",
     phone: "",
     area: "",
     district: "",
@@ -63,15 +65,17 @@ const evacDefaultValues: EvacForm = {
     pets: "",
     destination: "",
     accommodation: "",
-    otherInfo: ""
+    otherInfo: "",
+
+    age: "",
+    callType: "",
+    quetionType: "",
 }
 
 export type EvacForm = {
     timeStamp:Date
-   firstName: string
-   lastName: string
-   surname: string
-   phone: string
+   name: string,
+   phone: string 
    area: string
    district: string
    community: string
@@ -85,5 +89,9 @@ export type EvacForm = {
    accommodation: string
    otherInfo: string
    evacDate: Date
+
+   age: string
+   callType: string
+   quetionType: string
 }
 

@@ -48,7 +48,7 @@ export function OtherBlock() {
             </label>
             <label htmlFor='physic' className='h-20 my-2 w-full md:w-[46%]'>
                 <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Фізичний стан</h3>
-                <Select name="physic" options={physicOptions} />
+                <Select name="physic" {...register('physic')} options={physicOptions} />
             </label>
             <label htmlFor="" className="h-20 my-2 w-full md:w-[46%]">
                 <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Тварини</h3>
@@ -56,7 +56,7 @@ export function OtherBlock() {
             </label>
             <label htmlFor="whoami" className='h-20 my-2 w-full md:w-[46%]'>
                 <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Хто робив заявку</h3>
-                <Select name="whoami" options={whoamiOptions} />
+                <Select name="whoami" {...register('whoami')} options={whoamiOptions} />
             </label>
             <label htmlFor="" className='h-20 my-2 w-full md:w-[46%]   '>
                 <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>НП евакуації</h3>
@@ -64,7 +64,7 @@ export function OtherBlock() {
             </label>
             <label htmlFor="" className='h-20 my-2 w-full md:w-[46%]'>
                 <h3 className='text-navy font-madium text-lg mb-2 dark:text-darkText'>Поселення</h3>
-                <Select name="accommodation" options={accommodationOptions} />
+                <Select name="accommodation" {...register('accommodation')} options={accommodationOptions} />
             </label>
             
             <label htmlFor="" className="h-20 my-2 w-full md:w-[46%]">
