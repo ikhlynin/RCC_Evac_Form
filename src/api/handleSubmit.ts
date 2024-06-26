@@ -11,6 +11,7 @@ const APP_URL = 'https://script.google.com/macros/s/AKfycbw8W4pGeJb54tE0jzNPRipS
 
 
 export async function handleSubmitEvac(data:EvacForm){
+    //@ts-ignore
     data.timeStamp = moment().format("DD MM YYYY, hh:mm:ss")
     console.log('Data >> ', data)
 
